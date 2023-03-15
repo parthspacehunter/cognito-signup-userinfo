@@ -1,0 +1,41 @@
+<div class="row justify-content-center my-5">
+    <div class="col-8">
+        <label for="welcomemessage" class="form-label">Hi {{ user.name}} could you please help me with some questions below</label>
+        <br>
+      <div class="row">
+        <div class="col mb-2">
+          <label for="age" class="form-label">Could you please help me with your age?</label>
+          <input type="text" id="age" name="age" #age="ngModel" [(ngModel)]="userInfo.age" class="form-control form-control-sm">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-2">
+          <label for="favoritePlayer" class="form-label">Could you please let me know your favorite player?</label>
+          <input type="text" id="favoritePlayer" name="favoritePlayer" #favoritePlayer="ngModel" [(ngModel)]="userInfo.favoritePlayer" class="form-control form-control-sm">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-2">
+          <label for="favoriteSport" class="form-label">Could you please let me know your favorite Sport?</label>
+          <input type="text" id="favoriteSport" name="favoriteSport" #favoriteSport="ngModel" [(ngModel)]="userInfo.favoriteSport" class="form-control form-control-sm">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-2">
+          <label for="hobbies" class="form-label">Could you please let me know your Hobbies?</label>
+            <tag-input name="hobbies"[(ngModel)]="userInfo.hobbies" secondaryPlaceholder="Enter Hobbies"
+            ></tag-input>
+          <!-- <input type="text" id="hobbies" name="hobbies" #hobbies="ngModel" [(ngModel)]="userInfo.hobbies" placeholder="enter , seperated values" class="form-control form-control-sm"> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-grid">
+          <button type="button" (click)="submit()" class="btn btn-sm btn-dark" [disabled]="loading">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
